@@ -21,6 +21,8 @@
 
   let mainAdjectives = ['mini', 'instagramable', 'vegan', 'zero calorie'];
 
+  let sides = ['kale','tofu fries', 'a hard-boiled egg', 'green juice'];
+
   //desserts
 
   let dessertIngredients = ['cold brew','coconut milk', 'matcha', 'oat', 'water'];
@@ -30,6 +32,9 @@
   let dessertAdjectives = ['low carb', 'cute', 'enviornmentally friendly'];
 
   const MAX_APP_PRICE = 20;
+  const MAX_MAIN_PRICE = 40;
+  const MAX_DESSERT_PRICE = 15;
+
 
   function choose(arr) {
 
@@ -97,7 +102,7 @@
 
       // Generate a random item and price
       let result = generateMainCourse();
-      let price = Math.floor(Math.random() * (MAX_APP_PRICE - 1)) + 1;
+      let price = Math.floor(Math.random() * (MAX_MAIN_PRICE - 1)) + 1;
 
       // Insert the new item into the main course div
 
@@ -109,7 +114,7 @@
 
       // Set the internal contents of the new <p> node
       // to hold the randomized menu item and set class
-      para.innerHTML = '<span class="name">' + result + '</span>';
+      para.innerHTML = '<span class="name">' + result + " with a side of " + choose(sides) + '</span>';
       para.innerHTML += '<span class="price">' + price + '</span>';
 
       // This is required to position the next line properly
@@ -133,7 +138,7 @@
 
       // Generate a random item and price
       let result = generateDessert();
-      let price = Math.floor(Math.random() * (MAX_APP_PRICE - 1)) + 1;
+      let price = Math.floor(Math.random() * (MAX_DESSERT_PRICE - 1)) + 1;
 
       // Insert the new item into the desserts div
 
